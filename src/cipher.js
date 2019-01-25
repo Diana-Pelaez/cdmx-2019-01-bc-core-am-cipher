@@ -1,17 +1,18 @@
-window.cipher = {
+ window.cipher = {
 
-encode: (offset, string) => {
+encode: (offset, string) => { //asigna los parámetros offset (desplazamiento) y string(mensaje)
 
-    let resultado = '';
-    for (let i = 0; i < string.length; i++) {
-      let convAscii = string.charCodeAt(i);
-      
-      if (convAscii >= 65 && convAscii <= 90) {
-        resultado += String.fromCharCode((convAscii - 65 + parseInt(offset)) % 26 + 65); // Mayus Ascii: 65 - 90
-      } else if (convAscii >= 97 && convAscii <= 122) {
+    let resultado = ""; // "let" para definir la variable ´resultado´)
+    for (let i = 0; i < string.length; i++) { //ejecutar ciclo for, mientras que:...  (i++ (Incrementa en una unidad (0,1,2,..))   
+        let convAscii = string.charCodeAt(i); //se declara que la funcion convAscii es igual al CharCodeAt(devuelve el valor unicode de la cadenade texto) del string ingresado. iniciando en "0" o sea "i").
+
+// &&= and /  
+      if (convAscii >= 65 && convAscii <= 90) {     //si:(convAscii es mayor o igual a 65 "y" convAscii es menor o igual a 90) 
+        resultado += String.fromCharCode((convAscii - 65 + parseInt(offset)) % 26 + 65);   //se suma   Mayus Ascii: 65 - 90
+      } else if (convAscii >= 97 && convAscii <= 122) { 
         resultado += String.fromCharCode((convAscii - 97 + parseInt(offset)) % 26 + 97); // Minus Ascii: 97 - 122
       } else {                            
-        resultado += string[i];     // concatena los números, signos, espacios y caracteres especiales
+        resultado += string[i]; // concatena los números, signos, espacios y caracteres especiales
       }
     }
     return resultado;
@@ -19,7 +20,8 @@ encode: (offset, string) => {
   
   
 decode: (offset, string) => {
-    let resultado = ''; // Deja el convertir = parseInt(offset);
+
+    let resultado = ""; // Deja el convertir a entero = parseInt (offset);
     for (let i = 0; i < string.length; i++) {
       let convAscii = string.charCodeAt(i);
       if (convAscii >= 65 && convAscii <= 90) {
@@ -31,14 +33,6 @@ decode: (offset, string) => {
       }
     }
     return resultado;
-  }
-  
-  // window.cipher = {    //"cipher" es el "nombre" del objeto, puede CAMBIAR.
-  //   encode,
-  //   decode,
-  
-  //   createCipherWithOffset: (offset) => ({  //el offset 
-  //     encode: string => encode(offset, string), // El "nombre" del 1er encode puede cambiar. Le puse encode, porque así lo pide el ejercicio
-  //     decode: string => decode(offset, string), // El "nombre" del 1er decode puede cambiar. Le puse decode, porque así lo pide el ejercicio
-  // }),
-  };
+}
+
+}

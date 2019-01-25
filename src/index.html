@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <!-- Esta linea lo vuelve Responsive:  -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Secreto vecinal</title>
-  <link rel="styleshe et" href="style.css" />
-</head>
-<body>
-  <div id="root">
-    <form action="">
-        <h1>Hola ciudadano,</h1>
-        <h2>Codifica o decodifica tu mensaje para comunicarte con tu colonia.</h2>
-        <input type="text" id="offset" placeholder="Tu clave: (min:1,máx 33)" required>
-        <br>
-        <br>
-        <input type="text" id="mensaje" placeholder="Tu mensaje" required>
-        <br>
-
-  <!-- Creando los botones: encriptar, desencriptar -->
-    <div>
-      <input type="button" value="CIFRAR" id="btnEncode" class="boton">
-      <input type="button" value="DECIFRAR" id="btnDecode" class="boton"> </div>
-      <br>
-  <!-- Creando una caja de texto para mostrar el resultado -->
-  <p id="Miresultado"></p>  
-  <input type="text" id="cajaResultado" placeholder="Resultado" readonly="readonly">
-<!-- Creando el boton: limpiar -->
-<input type="button" value="LIMPIAR" id="botonLimpiar" class="boton">
-      </form>
-    </div>
-
-   <script src="cipher.js"></script>
-  <script src="index.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AlertApp</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <!-- <div id="root"></div> -->
+  <body>
+      <header>
+        <figure class="logo">
+          <img src="logoApp.svg"> 
+         </figure>
+      </header>
+        <form action="contenido" id="caja">
+          <h1 class ="saludo">Hola,</h1>
+            <div>
+              <p class= "texto">Alerta a tus vecinos sobre un tema en particular de forma totalmente confidencial o interpreta el mensaje que haz recibido. <br> Ingresa la clave y el mensaje que quieres codificar o decodificar.</p>
+                <input type="text" id="offset" placeholder="Clave"><br>
+            <br>
+                <input type="text" id="mensaje" placeholder="* Tu mensaje *">
+            </div>
+              <!-- Botones: de codificar, decodificar y limpiar -->
+            <div class="botones">
+              <input type="button" value="Cifrar" id="btnEncode" class="boton">
+              <input type="button" value="Descifrar" id="btnDecode" class="boton">
+              <input type="button" value="Limpiar" id="btnLimpiar" class="boton">
+            </div>
+          
+                <p id="Miresultado"></p>  
+              <input type="text" id="cajaResultado" class="ocultar" placeholder="Resultado" readonly="readonly"> 
+        </form>
+      <footer class="footer">
+        <p><strong>AlertApp</strong> es una herramienta que te permite cifrar y descifrar texto a partir de un algoritmo de cifrado.<br> 
+            • Para cifrar o descifrar un texto simplemente hay que llenar los campos: "clave" (clave numérica) y "tu mensaje" (texto).<br>
+            • Después de enviarlo aparecerá un nuevo recuadro con el nuevo texto, disponible para que lo copies y lo envíes a tus vecinos.<br>
+              <strong>AlertApp</strong> nos ofrece la seguridad de que nadie que no sepa la clave podrá entender nuestro mensaje.</p> 
+      </footer>
+    <script src="cipher.js"></script>
+    <script src="index.js"></script>
+  </body>
+    
+ 
 </html>
-
